@@ -80,7 +80,7 @@ const authorController = {
         return res.status(400).json({ message: "Unable to verify the ID" });
 
       // Find the author by id
-      const author = await Authors.findByIdAndDelete(id);
+      await Authors.findByIdAndDelete(id);
 
       // Return the Authors
       res.json({ message: "Deleted the author" });
