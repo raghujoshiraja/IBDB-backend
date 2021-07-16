@@ -43,7 +43,7 @@ const bookController = {
       // Validate the fields
       // TODO
       if (
-        typeof pageCount !== "number" ||
+        !/^-?\d+$/.test(pageCount) ||
         !title ||
         !genre ||
         !authorId ||
@@ -63,7 +63,7 @@ const bookController = {
       const newBook = new Books({
         title,
         genre,
-        pageCount,
+        pageCount: Number(pageCount),
         authorId,
         description,
       });
