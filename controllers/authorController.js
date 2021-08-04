@@ -37,7 +37,7 @@ const authorController = {
       const { name, age, isFemale } = req.body;
 
       // Validate the arguments
-      if (typeof isFemale !== "boolean" || !name || !age)
+      if (isFemale != "true" && isFemale != "false" || !name || !age)
         return res.status(400).json({
           message:
             "Cannot validate the provided fields. Please remember to provide a valid name, age, and gender.",
